@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAVEX Ethics Reporting Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo1.png" alt="NAVEX Logo" height="40">
+            </div>
+            <nav class="nav epNav">
+                <a href="#" class="nav-link">Make a Report</a>
+                <a href="#" class="nav-link">Follow up on a Report</a>
+                <a href="#" class="nav-link">Code of Conduct</a>
+                <a href="#" class="nav-link">FAQs</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#" class="mobile-nav-link">Make a Report</a>
+            <a href="#" class="mobile-nav-link">Follow up on a Report</a>
+            <a href="#" class="mobile-nav-link">Code of Conduct</a>
+            <a href="#" class="mobile-nav-link">FAQs</a>
+        </nav>
+    </div>
+</header>
+<main class="main">
+    <div class="container">
+        <div class="content-grid">
+            <div class="commitment-section">
+                <h1 id="1" class="section-title">Our Commitment</h1>
+                <div class="commitment-content">
+                    <p>
+                        <strong>_CLIENTNAME_</strong> is an organization with strong values of responsibility and integrity. Our 
+                        <a href="#" class="text-link">Code of Conduct</a> 
+                        contains general guidelines for conducting business with the highest standards of ethics.
+                    </p>
+                    <p>
+                        <strong>_CLIENTNAME_</strong> is committed to an environment where open, honest communications are 
+                        the expectation, not the exception. We want you to feel comfortable in approaching your 
+                        supervisor or management in instances where you believe violations of policies or standards 
+                        have occurred.
+                    </p>
+                    <p>
+                        In situations where you prefer to place an anonymous report in confidence, you are 
+                        encouraged to use this hotline, hosted by a third party hotline provider, EthicsPoint. You are 
+                        encouraged to submit reports relating to violations stated in our 
+                        <a href="#" class="text-link">Code of Conduct</a>, as well as 
+                        asking for guidance related to policies and procedure and providing positive suggestions and 
+                        stories.
+                    </p>
+                    <p>
+                        The information you provide will be sent to us by EthicsPoint on a totally confidential and 
+                        anonymous basis if you should choose. You have our guarantee that your comments will be 
+                        heard.
+                    </p>
+                    <p>
+                        See the 
+                        <a href="#" class="text-link">EthicsPoint FAQs</a> 
+                        for more information.
+                    </p>
+                </div>
+            </div>
+            <div class="report-section">
+                <h1 id="2" class="section-title">To Make a Report</h1>
+                <div class="report-options">
+                    <div class="report-option">
+                        <div class="option-icon">
+                            <img src="transparent-laptop.png" alt="Laptop Icon" >
+                        </div>
+                        <div class="option-content">
+                            <h2 class="option-title">Online</h2>
+                            <button class="report-button">Make a Report</button>
+                        </div>
+                    </div>
+                    <div class="report-option">
+                        <div class="option-icon">
+                            <img src="transparent-phone.png" alt="Phone Report Icon" >
+                        </div>
+                        <div class="option-content">
+                            <h2 class="option-title">By Phone</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-warning">
+                <strong>EthicsPoint is NOT a 911 or Emergency Service.</strong>
+            </p>
+            <p class="footer-disclaimer">
+                Do not use this site to report events presenting an immediate threat to life or property. Reports submitted through this service may not receive an immediate response. If you require emergency assistance, please contact your local authorities.
+            </p>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    Copyright © 2000-2023 NAVEX Global, Inc. All Rights Reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Statement</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="footer-link">Acceptable Use Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="footer-link">Cookie Statement</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="footer-link">Contact NAVEX</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+        });
+    });
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = mobileNav.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        if (!isClickInsideNav && !isClickOnHamburger && mobileNav.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+</script>
+</body>
+</html>
